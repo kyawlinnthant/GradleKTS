@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        dependent(AppDependencies.dependency)
+        this dependent AppDependencies.dependency
     }
 }
 

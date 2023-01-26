@@ -53,22 +53,22 @@ plugins {
 
 dependencies {
     //App
-    implement(AppDependencies.app)
+    this need AppDependencies.app
     //compose
-    implement(AppDependencies.compose)
+    this need AppDependencies.compose
     //network
-    implement(AppDependencies.network)
+    this need AppDependencies.network
     //db
-    implement(AppDependencies.db)
-    kapt(AppDependencies.dbKapt)
-    annotate(AppDependencies.dbAnnotation)
+    this need AppDependencies.db
+    this kapt AppDependencies.dbKapt
+    this annotate AppDependencies.dbAnnotation
     //di
-    implement(AppDependencies.di)
-    kapt(AppDependencies.diKapt)
+    this need AppDependencies.di
+    this kapt AppDependencies.diKapt
     //android test
-    androidTest(AppDependencies.androidTest)
+    this androidTest AppDependencies.androidTest
     //unit test
-    unitTest(AppDependencies.unitTest)
+    this unitTest AppDependencies.unitTest
     //debug test
-    debugTest(AppDependencies.debugTest)
+    this debugTest AppDependencies.debugTest
 }
