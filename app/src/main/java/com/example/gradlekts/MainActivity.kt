@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting()
                 }
             }
         }
@@ -33,14 +33,14 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun Greeting() {
+    Text(text = "Hello")
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     GradleKTSTheme {
-        Greeting("Android")
+        Greeting()
     }
 }
