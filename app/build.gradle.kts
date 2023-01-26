@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
+    id("com.google.dagger.hilt.android")
     kotlin("android")
-    kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 @Suppress("UnstableApiUsage") android {
@@ -41,7 +42,7 @@ plugins {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
     packagingOptions {
         resources {
@@ -51,9 +52,23 @@ plugins {
 }
 
 dependencies {
+    //App
     implement(AppDependencies.app)
+    //compose
     implement(AppDependencies.compose)
+    //network
+    implement(AppDependencies.network)
+    //db
+    implement(AppDependencies.db)
+    kapt(AppDependencies.dbKapt)
+    annotate(AppDependencies.dbAnnotation)
+    //di
+    implement(AppDependencies.di)
+    kapt(AppDependencies.diKapt)
+    //android test
     androidTest(AppDependencies.androidTest)
+    //unit test
     unitTest(AppDependencies.unitTest)
+    //debug test
     debugTest(AppDependencies.debugTest)
 }
